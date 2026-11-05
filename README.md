@@ -6,7 +6,7 @@ São só dois arquivos que importam: o `LFSLazy.exe` e o `powrprof.dll` — mant
 
 ## ⬇️ Download
 
-**👉 [Clique aqui para baixar o LFSLazy_0.8C37.zip](https://github.com/BawTz/LFSLazy-0.8C36/releases/download/v1.1/LFSLazy_0.8C37.zip)** — vem o pacote completo: `LFSLazy.exe`, `powrprof.dll` e `LEIA-ME.txt`.
+**👉 [Clique aqui para baixar o LFSLazy_0.8C37.zip](https://github.com/BawTz/LFSLazy-0.8C37/releases/download/v1.1/LFSLazy_0.8C37.zip)** — vem o pacote completo: `LFSLazy.exe`, `powrprof.dll` e `LEIA-ME.txt`.
 
 Também dá pra pegar pela aba **[Releases](../../releases/latest)**. Os arquivos estão no repositório aqui em cima também, então o botão verde **Code → Download ZIP** igualmente traz tudo.
 
