@@ -1,12 +1,25 @@
-LFSLazy + Gadgets  -  para o LFS 0.8C36
-=======================================
+LFSLazy + Gadgets  -  para o LFS 0.8C37 (funciona tambem no 0.8C36)
+====================================================================
 
-Este e o LFSLazy (patch 0.7G da comunidade) funcionando no LFS 0.8C36,
-com alguns gadgets extras trazidos do DetectnMonitor2 (medidas de pneu,
-voltas, tempos de pit, etc.), com o mesmo desenho do D&M.
+Este e o LFSLazy (patch 0.7G da comunidade) funcionando no LFS 0.8C37 e no
+0.8C36, com alguns gadgets extras trazidos do DetectnMonitor2 (medidas de
+pneu, voltas, tempos de pit, etc.), com o mesmo desenho do D&M.
 
 Sao so dois arquivos: o LFSLazy.exe e o powrprof.dll. Mantenha os dois
 na MESMA pasta.
+
+
+NOVIDADES DESTA VERSAO
+----------------------
+- Suporte ao LFS 0.8C37 (o 0.8C36 continua funcionando).
+- SPLIT PREDICT e TIME DIFF corrigidos. O LFS 0.8 conta o tempo em
+  milesimos e o LFSLazy (feito para o LFS 0.7) esperava centesimos, por
+  isso esses gadgets mostravam valores 10x maiores.
+- PB TIME com 3 casas decimais (ex.: 1:11.123), como o proprio LFS 0.8.
+- Se voce usava uma versao anterior: as voltas de referencia antigas do
+  SPLIT PREDICT (gravadas na escala errada) sao movidas sozinhas para
+  LFSLazy\SplitPredict\old-0.8-ms. O LFSLazy grava uma referencia nova na
+  proxima volta completa.
 
 
 E SEGURO?
@@ -66,6 +79,14 @@ VS PREVIOUS LAP  Cada parcial e cada volta comparada com a anterior:
 As medias e o "Vs previous lap" zeram quando a corrida reinicia.
 
 
+PB TIME COM 3 CASAS
+-------------------
+O LFSLazy guarda os PBs em centesimos. O patch grava as suas voltas em
+milesimos (arquivo LFSLazy\LazyPatch-PB-ms.txt) e mostra o PB TIME com a
+3a casa. Vale para os PBs feitos a partir desta versao: um PB antigo
+continua com 2 casas ate voce fazer um novo.
+
+
 EDITAR OS GADGETS
 -----------------
 Menu do LFSLazy -> Gadgets -> modo de edicao ("Gadgets - Edit Mode"):
@@ -74,7 +95,7 @@ Menu do LFSLazy -> Gadgets -> modo de edicao ("Gadgets - Edit Mode"):
   - passar o mouse mostra nome e descricao
   - a LISTA DE POSICOES do LFSLazy tambem liga/desliga aqui (botao direito
     em cima dela; quando desligada aparece um bloco "Position List ON/OFF").
-O LFSLazy salva tudo no arquivo de configuracao dele (pasta LFSLazy\),
+O LFSLazy salva tudo no arquivo de configuracao dele (pasta LFSLazy),
 junto com os gadgets normais.
 
 Dica: nao deixe o DetectnMonitor mostrando os mesmos gadgets ao mesmo
@@ -93,15 +114,15 @@ crie um arquivo lazypatch.ini na mesma pasta, com:
   MciInterval=50  ; atualizacao das posicoes (ms)
   InSimPort=0     ; 0 = mesma porta do LFSLazy
 
-Num LFS diferente do 0.8C36, se os enderecos internos mudarem, os gadgets
-de pneu, hora e temperatura mostram "--" em vez de valores errados.
+Num LFS diferente do 0.8C36/0.8C37, se os enderecos internos mudarem, os
+gadgets de pneu, hora e temperatura mostram "--" em vez de valores errados.
 
 
 CREDITOS
 --------
 - LFSLazy: ferramenta original da comunidade do Live for Speed.
 - Gadgets: originais do DetectnMonitor2 (comunidade do Live for Speed).
-- Adaptacao para o LFS 0.8C36 e gadgets dentro do LFSLazy: patch
+- Adaptacao para o LFS 0.8C36/0.8C37 e gadgets dentro do LFSLazy: patch
   nao-oficial feito pela comunidade.
 
 Patch nao-oficial. Live for Speed, LFSLazy e DetectnMonitor pertencem aos
@@ -111,4 +132,4 @@ seus respectivos autores.
 VERIFICACAO (SHA-256)
 ---------------------
 LFSLazy.exe    073b2f3464a3b169985663b690d9c32470310f39f5621059370772de9be8e246
-powrprof.dll   997dfa5f4dc871f9f9c5ec4466670389bde98e9295138304e098219b6905b0f9
+powrprof.dll   23d34c9d75d812e3a8806e92e01fe314fc0fe9de782e7a380c9e5731e8d3dfcc
