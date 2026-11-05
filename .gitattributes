@@ -1,3 +1,4 @@
 *.exe binary
 *.dll binary
 *.zip binary
+LEIA-ME.txt -text
