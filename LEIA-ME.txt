@@ -1,0 +1,114 @@
+LFSLazy + Gadgets  -  para o LFS 0.8C36
+=======================================
+
+Este e o LFSLazy (patch 0.7G da comunidade) funcionando no LFS 0.8C36,
+com alguns gadgets extras trazidos do DetectnMonitor2 (medidas de pneu,
+voltas, tempos de pit, etc.), com o mesmo desenho do D&M.
+
+Sao so dois arquivos: o LFSLazy.exe e o powrprof.dll. Mantenha os dois
+na MESMA pasta.
+
+
+E SEGURO?
+---------
+- O LFSLazy.exe deste pacote e EXATAMENTE o LFSLazy original da comunidade
+  (o mesmo 0.7G), sem nenhuma alteracao. Da para conferir pelo codigo
+  SHA-256 la embaixo: e identico ao que ja circula.
+- Tudo o que e novo esta no powrprof.dll (o "patch"). Ele roda dentro do
+  LFSLazy, apenas LE a memoria do LFS (nunca escreve nela) e conversa com
+  o LFS na sua propria maquina pelo InSim, como qualquer programa InSim.
+  Nao injeta nada no LFS e nao manda seus dados para lugar nenhum.
+- Mantenha os dois arquivos juntos. Se apagar o powrprof.dll, o LFSLazy
+  volta a ser o normal, sem os gadgets novos.
+- Se algum antivirus reclamar, costuma ser falso positivo, comum em
+  patches e overlays de jogo (eles mexem na memoria do jogo). O exe e o
+  original: confira o SHA-256.
+
+
+COMO USAR
+---------
+1. Extraia a pasta onde quiser (pode ser dentro da pasta do LFS).
+2. Deixe LFSLazy.exe e powrprof.dll juntos, na mesma pasta.
+3. Abra o LFS. No chat do LFS, digite uma vez:  /insim 29999
+   (isso liga o InSim; repita cada vez que abrir o LFS, ou coloque num
+    script de autostart se voce ja usa um.)
+4. Abra o LFSLazy.exe. Na primeira vez ele mostra a janela de configuracao:
+   deixe a porta em 29999 e clique em Continue.
+5. Entre num carro e pilote: os gadgets aparecem. Eles somem no menu,
+   assistindo ou no SHIFT+U, igual ao D&M.
+
+(No LFS, Shift+I e Shift+B escondem/mostram os botoes de qualquer programa
+ InSim, inclusive estes.)
+
+
+OS GADGETS
+----------
+TYRE THICKNESS   Banda que sobra em cada faixa do pneu, em % (100 = novo).
+                 Em cima os dianteiros, embaixo os traseiros, 3 faixas por
+                 pneu. Cores do D&M: verde = ok, amarelo = abaixo de ~15%,
+                 vermelho = abaixo de ~4%.
+AHEAD / BEHIND   Em corrida: distancia em tempo para o carro da frente / de
+                 tras na classificacao, medida no mesmo ponto da pista.
+                 Em treino/classificacao: diferenca de melhor volta.
+TIME-TEMP        Hora do jogo e temperatura do ar.
+STARTSTOPSTATS   Linha 1: 0-100 km/h saindo parado (ultima medicao).
+                 Linha 2: tempo no pit lane (ao vivo) e, entre parenteses,
+                 o tempo parado no box. Ex.: "23.8 (7.2) s".
+AVGLAP-STINT     Media das voltas do stint (recomeca num pit com
+                 reabastecimento, como no D&M).
+AVGLAP-CLEAN     Media do stint so com as voltas limpas (ate 103% da media).
+AVGLAP-TOTAL     Media de todas as voltas da sessao.
+AVGLAP           O botao original do D&M, que alterna stint / clean / total
+                 a cada 5 segundos.
+VS PREVIOUS LAP  Cada parcial e cada volta comparada com a anterior:
+                 "[S1] -0.52", "[L] +0.31".
+
+As medias e o "Vs previous lap" zeram quando a corrida reinicia.
+
+
+EDITAR OS GADGETS
+-----------------
+Menu do LFSLazy -> Gadgets -> modo de edicao ("Gadgets - Edit Mode"):
+  - arrastar com o botao esquerdo = mover
+  - botao direito = liga/desliga (os desligados ficam cinza)
+  - passar o mouse mostra nome e descricao
+  - a LISTA DE POSICOES do LFSLazy tambem liga/desliga aqui (botao direito
+    em cima dela; quando desligada aparece um bloco "Position List ON/OFF").
+O LFSLazy salva tudo no arquivo de configuracao dele (pasta LFSLazy\),
+junto com os gadgets normais.
+
+Dica: nao deixe o DetectnMonitor mostrando os mesmos gadgets ao mesmo
+tempo, senao eles ficam um por cima do outro.
+
+
+OPCIONAL (avancado)
+-------------------
+Os gadgets funcionam sozinhos, com valores padrao. Se quiser mudar algo,
+crie um arquivo lazypatch.ini na mesma pasta, com:
+
+  [Gadgets]
+  Enabled=1       ; 0 desliga todos os gadgets novos
+  TempUnit=C      ; C ou F (Time-Temp)
+  AvgLapCycle=5   ; segundos entre stint/clean/total no AVGLAP
+  MciInterval=50  ; atualizacao das posicoes (ms)
+  InSimPort=0     ; 0 = mesma porta do LFSLazy
+
+Num LFS diferente do 0.8C36, se os enderecos internos mudarem, os gadgets
+de pneu, hora e temperatura mostram "--" em vez de valores errados.
+
+
+CREDITOS
+--------
+- LFSLazy: ferramenta original da comunidade do Live for Speed.
+- Gadgets: originais do DetectnMonitor2 (comunidade do Live for Speed).
+- Adaptacao para o LFS 0.8C36 e gadgets dentro do LFSLazy: patch
+  nao-oficial feito pela comunidade.
+
+Patch nao-oficial. Live for Speed, LFSLazy e DetectnMonitor pertencem aos
+seus respectivos autores.
+
+
+VERIFICACAO (SHA-256)
+---------------------
+LFSLazy.exe    073b2f3464a3b169985663b690d9c32470310f39f5621059370772de9be8e246
+powrprof.dll   997dfa5f4dc871f9f9c5ec4466670389bde98e9295138304e098219b6905b0f9

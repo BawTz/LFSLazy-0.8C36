@@ -2,11 +2,13 @@
 
 Este é o **LFSLazy** (patch 0.7G da comunidade) funcionando no **LFS 0.8C36**, com alguns **gadgets extras trazidos do DetectnMonitor2** (medidas de pneu, voltas, tempos de pit, etc.), mantendo o mesmo desenho do D&M.
 
-São só dois arquivos: o `LFSLazy.exe` e o `powrprof.dll` — mantenha os dois na **mesma pasta**.
+São só dois arquivos que importam: o `LFSLazy.exe` e o `powrprof.dll` — mantenha os dois na **mesma pasta**.
 
 ## ⬇️ Download
 
-Baixe o zip na aba **[Releases](../../releases/latest)**. Dentro vêm o `LFSLazy.exe`, o `powrprof.dll` e o `LEIA-ME.txt`.
+**👉 [Clique aqui para baixar o LFSLazy_0.8C36.zip](https://github.com/BawTz/LFSLazy-0.8C36/releases/download/v1.0/LFSLazy_0.8C36.zip)** — vem o pacote completo: `LFSLazy.exe`, `powrprof.dll` e `LEIA-ME.txt`.
+
+Também dá pra pegar pela aba **[Releases](../../releases/latest)**. Os arquivos estão no repositório aqui em cima também, então o botão verde **Code → Download ZIP** igualmente traz tudo.
 
 ## É seguro?
 
